@@ -6,7 +6,12 @@ const MyModel = require('./schema');
 const cors = require('cors');
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+    origin: "https://umarstar.github.io/final-year-project/",
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.post('/post', async (req, res) => {
     let result = new MyModel(req.body);
