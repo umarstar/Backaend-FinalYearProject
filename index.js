@@ -13,8 +13,8 @@ app.post('/post', async (req, res) => {
     result = await result.save();
     res.send(result);
 });
-
-app.listen(4000, (err) => {
+const port = process.env.PORT || 4000 ;
+app.listen(port , (err) => {
     if (err) {
         console.log('Error starting the server');
     } else {
